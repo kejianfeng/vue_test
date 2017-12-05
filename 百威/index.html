@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta charset="UTF-8">
+<title>VIBE直播</title>
+<link rel="stylesheet" type="text/css" href="css/style.css"/>
+<link rel="stylesheet" type="text/css" href="css/slick.css"/>
+<link href="css/jquery.jscrollpane.css" rel="stylesheet" type="text/css"/>
+<script src="http://appmedia.qq.com/media/h5e/json2.js"></script>
+<script src="js/lib/jquery.min.1.11.3.js" type="text/javascript" charset="utf-8"></script>
+<script src="http://imgcache.gtimg.cn/tencentvideo_v1/tvp/js/tvp.player_v2.js"></script>
+<script type="text/javascript" src="js/lib/jquery.jscrollpane.min.js"></script>
+<script type="text/javascript" src="js/lib/jquery.mousewheel.js"></script>
+<script type="text/javascript" src="js/lib/slick.min.js"></script>
+<script src="http://appmedia.qq.com/media/631007208/appin/h5e.2.0.2.js" id='h5e-node' arg='{"tamsid": "641012504","debug": false,"track":true}'></script>
+<script>
+    if(h5e.util.ua().isMobile){
+        window.location.href = "../wap/index.html";
+    }
+    </script>
+<script type="text/javascript" src="js/live_project.js"></script>
+<script src="js/index.js" type="text/javascript" charset="utf-8"></script>
+<script type='text/javascript' src='http://js.aq.qq.com/js/aq_common.js'></script>
+</head>
+<body>
+<div class="wrap_box">
+<div class="wrap_nav">
+<div class="nav">
+<ul class="clearfix">
+<li class="special">
+<a href="index.html">
+<p>VIBE直播</p>
+<div class="nav_active">
+<img src="images/active.gif" alt=""/>
+</div>
+</a>
+</li>
+<li class="normal">
+<a href="latest.html">
+<p>最新动态</p>
+</a>
+</li>
+<li class="normal">
+<a href="electromusic.html">
+<p>电音时代</p>
+</a>
+</li>
+<li class="normal">
+<a href="EDMsheet.html">
+<p>EDM歌单</p>
+</a>
+</li>
+<li class="normal looperEdm">
+<a href="http://budweiser.looper.pro/" target="_blank">
+<p>电音社区</p>
+</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="logo">
+<img src="images/logo.png" alt=""/>
+</div>
+<div class="header" style="display:none">
+<div class="header_content">
+<div class="live_before" style="display:none">
+<p class="liveStartTime">距8月15日14:00直播开始还有</p>
+<div class="time">
+<span class="time_day"></span>
+<i class="day_time">天</i>
+<span class="time_hour"></span>
+<i class="hour_time">时</i>
+<span class="time_min"></span>
+<i class="min_time">分</i>
+<span class="time_sec"></span>
+<i class="sec_time">秒</i>
+</div>
+</div>
+<div class="live">
+<div class="tab tab_01" video-url="01" index="0" style="display:none">
+<p>主会场</p>
+<div class="border">
+<img src="images/border.png" alt=""/>
+</div>
+<div class="tab_active">
+<img src="images/active.gif" alt=""/>
+</div>
+</div>
+<div class="tab tab_02" video-url="02" index="1" style="display:none">
+<p>KOL1</p>
+<div class="border">
+<img src="images/border.png" alt=""/>
+</div>
+<div class="tab_active">
+<img src="images/active.gif" alt=""/>
+</div>
+</div>
+<div class="tab tab_03" video-url="03" index="2" style="display:none">
+<p>KOL2</p>
+<div class="border">
+<img src="images/border.png" alt=""/>
+</div>
+<div class="tab_active">
+<img src="images/active.gif" alt=""/>
+</div>
+</div>
+<div class="live" style="display:none">
+<h3 class="icon watch_count_lable">观看人数</h3>
+<h6 class="icon watch_count_text"> </h6>
+</div>
+</div>
+</div>
+</div>
+<div class="main">
+<div class="main_content clearfix">
+<div class="main_video">
+<div class="play_video video_01" vid="f0506b1ljtv" index="0">
+<div class="video_bg video_bg_01">
+<img src="" alt=""/>
+</div>
+<div class="video_shade">
+<img src="images/main_video_shade.png" alt=""/>
+</div>
+<div class="play_btn">
+<img src="images/play_btn.png" alt=""/>
+</div>
+</div>
+<div class="play_video video_02" vid="f0506b1ljtv" index="1">
+<div class="video_bg video_bg_02">
+<img src="" alt=""/>
+</div>
+<div class="video_shade">
+<img src="images/main_video_shade.png" alt=""/>
+</div>
+<div class="play_btn">
+<img src="images/play_btn.png" alt=""/>
+</div>
+</div>
+<div class="play_video video_03" vid="f0506b1ljtv" index="2">
+<div class="video_bg video_bg_02">
+<img src="" alt=""/>
+</div>
+<div class="video_shade">
+<img src="images/main_video_shade.png" alt=""/>
+</div>
+<div class="play_btn">
+<img src="images/play_btn.png" alt=""/>
+</div>
+</div>
+<div class="player_05" id="player_05"></div>
+</div>
+<div class="comment">
+<div class="comment_line">
+<img src="images/comment_line.png" alt=""/>
+</div>
+<div class="comment_logo">
+<img src="images/comment_logo_01.png" alt=""/>
+</div>
+<ul class="icon comment_content">
+</ul>
+<div class="input_comment">
+<input type="text" value="我要评论/" class="comment_inp" />
+</div>
+<div class="commit_btn">
+<img src="images/commit_comment.png" alt=""/>
+</div>
+</div>
+<div class="banner clearfix">
+<div class="baiwei_code">
+<div class="baiwei_china_code">
+<img src="images/baiwei_china_code.png" alt="">
+</div>
+<p>关注百威中国</p>
+</div>
+<div class="baiwei_code">
+<div class="baiwei_china_code">
+<img src="images/baiwei_weidian_code.png" alt="">
+</div>
+<p>关注百威微店</p>
+</div>
+<a class="banner_pic" href="javascript:;">
+<div class="banner_bg">
+<img src="images/banner_bg.png" alt=""/>
+</div>
+<div class="banner_shade">
+<img src="images/banner_shade.png" alt=""/>
+</div>
+</a>
+</div>
+</div>
+</div>
+<div class="charts">
+<div class="charts_content">
+<div class="charts_title">
+<img src="images/chart_title.gif" alt=""/>
+</div>
+<div class="charts_turns">
+<div class="charts_prev">
+<img src="images/charts_prev.gif" alt="">
+</div>
+<div class="charts_next">
+<img src="images/charts_next.gif" alt="">
+</div>
+<div class="charts_carousel">
+<div class="charts_con">
+<div class="charts_bg">
+<div class="charts_border">
+<img src="images/charts_border.png"/>
+</div>
+<div class="charts_pic_wrap">
+<div class="charts_pic">
+<img src="images/charts_pic_01.png" alt=""/>
+</div>
+</div>
+<div class="charts_shade">
+<img src="images/charts_shade.png" alt=""/>
+<div class="name">BLACK COFFEE</div>
+<div class="place">1</div>
+</div>
+</div>
+<span class="number">4</span>
+<p>支持数</p>
+<div class="support_btn">
+<div class="support_bg">
+<img src="images/suport_bg.png" alt="">
+</div>
+<div class="support_word">
+支持TA
+</div>
+</div>
+</div>
+<div class="charts_con">
+<div class="charts_bg">
+<div class="charts_border">
+<img src="images/charts_border.png"/>
+</div>
+<div class="charts_pic_wrap">
+<div class="charts_pic">
+<img src="images/charts_pic_02.png" alt=""/>
+</div>
+</div>
+<div class="charts_shade">
+<img src="images/charts_shade.png" alt=""/>
+<div class="name">JAMAL BOSS</div>
+<div class="place">2</div>
+</div>
+</div>
+<span class="number">43</span>
+<p>支持数</p>
+<div class="support_btn">
+<div class="support_bg">
+<img src="images/suport_bg.png" alt="">
+</div>
+<div class="support_word">
+支持TA
+</div>
+</div>
+</div>
+<div class="charts_con">
+<div class="charts_bg">
+<div class="charts_border">
+<img src="images/charts_border.png"/>
+</div>
+<div class="charts_pic_wrap">
+<div class="charts_pic">
+<img src="images/charts_pic_03.png" alt=""/>
+</div>
+</div>
+<div class="charts_shade">
+<img src="images/charts_shade.png" alt=""/>
+<div class="name">BLACK COFFEE</div>
+<div class="place">3</div>
+</div>
+</div>
+<span class="number">432</span>
+<p>支持数</p>
+<div class="support_btn">
+<div class="support_bg">
+<img src="images/suport_bg.png" alt="">
+</div>
+<div class="support_word">
+支持TA
+</div>
+</div>
+</div>
+<div class="charts_con">
+<div class="charts_bg">
+<div class="charts_border">
+<img src="images/charts_border.png"/>
+</div>
+<div class="charts_pic_wrap">
+<div class="charts_pic">
+<img src="images/charts_pic_04.png" alt=""/>
+</div>
+</div>
+<div class="charts_shade">
+<img src="images/charts_shade.png" alt=""/>
+<div class="name">STEVE AOKI</div>
+<div class="place">4</div>
+</div>
+</div>
+<span class="number">4324</span>
+<p>支持数</p>
+<div class="support_btn">
+<div class="support_bg">
+<img src="images/suport_bg.png" alt="">
+</div>
+<div class="support_word">
+支持TA
+</div>
+</div>
+</div>
+<div class="charts_con">
+<div class="charts_bg">
+<div class="charts_border">
+<img src="images/charts_border.png"/>
+</div>
+<div class="charts_pic_wrap">
+<div class="charts_pic">
+<img src="images/charts_pic_04.png" alt=""/>
+</div>
+</div>
+<div class="charts_shade">
+<img src="images/charts_shade.png" alt=""/>
+<div class="name">STEVE AOKI</div>
+<div class="place">5</div>
+</div>
+</div>
+<span class="number">43245</span>
+<p>支持数</p>
+<div class="support_btn">
+<div class="support_bg">
+<img src="images/suport_bg.png" alt="">
+</div>
+<div class="support_word">
+支持TA
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="lookback">
+<div class="lookback_content clearfix">
+<div class="lookback_title">
+<img src="images/lookback_title.gif" alt="">
+</div>
+<div class="lookback_prev">
+<img src="images/charts_prev.gif" alt=""/>
+</div>
+<div class="lookback_next">
+<img src="images/charts_next.gif" alt=""/>
+</div>
+<div class="lookback_links clearfix">
+<a class="lookback_link" href="javascript:;" target="_blank">
+<div class="lookback_pic">
+<img src="images/lookback_pic_01.png" alt=""/>
+</div>
+<div class="lookback_shade">
+<img src="images/report_shade.png" alt=""/>
+</div>
+<p class="lookback_word">TL-世界电音 恩恩爱爱</p>
+<div class="lookback_play">
+<img src="images/play_btn.png" alt=""/>
+</div>
+</a>
+<a class="lookback_link" href="javascript:;" target="_blank">
+<div class="lookback_pic">
+<img src="images/lookback_pic_02.png" alt=""/>
+</div>
+<div class="lookback_shade">
+<img src="images/report_shade.png" alt=""/>
+</div>
+<p class="lookback_word">TL-世界电音 恩恩爱爱</p>
+<div class="lookback_play">
+<img src="images/play_btn.png" alt=""/>
+</div>
+</a>
+<a class="lookback_link" href="javascript:;" target="_blank">
+<div class="lookback_pic">
+<img src="images/lookback_pic_03.png" alt=""/>
+</div>
+<div class="lookback_shade">
+<img src="images/report_shade.png" alt=""/>
+</div>
+<p class="lookback_word">DVBBS释出最新单曲</p>
+<div class="lookback_play">
+<img src="images/play_btn.png" alt=""/>
+</div>
+</a>
+<a class="lookback_link" href="javascript:;" target="_blank">
+<div class="lookback_pic">
+<img src="images/lookback_pic_04.png" alt=""/>
+</div>
+<div class="lookback_shade">
+<img src="images/report_shade.png" alt=""/>
+</div>
+<p class="lookback_word">DVBBS释出最新单曲</p>
+<div class="lookback_play">
+<img src="images/play_btn.png" alt=""/>
+</div>
+</a>
+</div>
+</div>
+</div>
+<div class="notice">
+<div class="notice_content">
+<div class="notice_title">
+<img src="images/notice_title.gif" alt=""/>
+</div>
+<h1>中国电音社区资讯平台LOOPER</h1>
+<h6>关注下载LOOPER，获取最新电音活动赠票及资讯，更能找到与你一样热爱电音的好朋友！</h6>
+<div class="notice_code clearfix">
+<div class="code_con">
+<div class="code_pic">
+<img src="images/app_code.png" alt=""/>
+</div>
+<div class="code_word">下载LOOPER APP</div>
+</div>
+<div class="code_con">
+<div class="code_pic">
+<img src="images/haoma_code.png" alt=""/>
+</div>
+<div class="code_word">关注LOOPER<br/>微信公众号</div>
+</div>
+</div>
+<div class="online">
+<div class="online_title">线上福利</div>
+<div class="online_content clearfix">
+<div class="welfare">
+<div class="welfare_pic">
+<img src="images/welfare_pic_01.png" alt=""/>
+</div>
+<div class="welfare_word">电音节送票</div>
+</div>
+<div class="welfare">
+<div class="welfare_pic">
+<img src="images/welfare_pic_02.png" alt=""/>
+</div>
+<div class="welfare_word">仓库派对送票</div>
+</div>
+<div class="welfare">
+<div class="welfare_pic">
+<img src="images/welfare_pic_03.png" alt=""/>
+</div>
+<div class="welfare_word">周边福利活动</div>
+</div>
+</div>
+</div>
+<div class="offline">
+<div class="offline_title">线下福利</div>
+<div class="offline_content">
+<div class="offline_pic">
+<img src="images/offline_pic.png" alt=""/>
+</div>
+<div class="offline_word">线下定期组织、带领粉丝共同参与<br/>电音节、仓库派对等演出活动</div>
+</div>
+</div>
+</div>
+</div>
+<div class="down">
+<img src="images/down.gif" alt=""/>
+</div>
+<div class="wrap_copyright">
+<div class="copyright">
+<div class="copy_logo">
+<img src="images/footer_logo_02.png" alt=""/>
+</div>
+<div class="copyright_word copyright_word_01">独家战略合作</div>
+<div class="copyright_word copyright_word_02">您所浏览的页面为腾讯公司广告客户在腾讯平台刊登之广告，所述产品非腾讯出品。</div>
+</div>
+</div>
+<div class="wrap_footer">
+<div class="footer clearfix">
+<p>官方账号</p>
+<span class="sina"></span>
+<span class="weixin"></span>
+<span class="entertainment"></span>
+<i class="line"></i>
+<span class="official"></span>
+<div class="bottom_code">
+<img src="images/bottom_code.jpg" alt=""/>
+</div>
+</div>
+</div>
+</div>
+<script>
+var _mtac = {};
+(function() {
+    var mta = document.createElement("script");
+    mta.src = "http://pingjs.qq.com/h5/stats.js?v2.0.2";
+    mta.setAttribute("name", "MTAH5");
+    mta.setAttribute("sid", "500509069");
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(mta, s);
+})();
+</script>
+<script src="js/h5e.load.js" charset="utf-8"></script>
+</body>
+</html>
